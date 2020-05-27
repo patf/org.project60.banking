@@ -153,7 +153,8 @@
             <td class="rules-analyser__set-{$rule_field}-ui">
               {if $field_ui->options}
                 <select name="rules-analyser__set-{$rule_field}" value="{$field_ui->default}" >
-                  {foreach from=$field_ui->options item=option_label key=option_value}
+                  {$options = settype($field_ui->options, 'array')}
+                  {foreach from=$options item=option_label key=option_value}
                     <option {if $option_value == $field_ui->default}selected="selected"{/if} value="{$option_value}" >{ts domain='org.project60.banking'}{$option_label}{/ts}</option>
                   {/foreach}
                 </select>

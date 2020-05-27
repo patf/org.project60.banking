@@ -213,7 +213,7 @@ class CRM_Banking_PluginImpl_Matcher_RulesAnalyser extends CRM_Banking_PluginMod
       }
     }
     $smarty_vars['rules']         = $rules_data;
-    $smarty_vars['fields_to_set'] = isset($config->fields_to_set) ? $config->fields_to_set : [];
+    $smarty_vars['fields_to_set'] = isset($config->fields_to_set) ? (array) $config->fields_to_set : [];
     $smarty_vars['btx_id']        = (int) $btx->id;
     $smarty_vars['matcher_id']    = (int) $this->_plugin_id;
 
